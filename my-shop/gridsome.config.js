@@ -1,4 +1,4 @@
-// This is where project configuration and plugin options are located. 
+// This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
 // Changes here require a server restart.
@@ -9,26 +9,13 @@ module.exports = {
   siteDescription: 'Simple products catalog with Gridsome',
   titleTemplate: '%s - MyShop',
   siteUrl: '',
-  plugins: []
+  plugins: [],
+  templates: {
+    Product: [
+      {
+        path: '/product/:title',
+        component: './src/templates/Product.vue'
+      }
+    ]
+  }
 }
-
-module.exports = {
-  plugins: [
-    {
-      use: '@gridsome/transformer-json'
-    
-    }
-  ]
-}
-
-
-//  module.exports = {
-//    templates: {
-//      Product: [
-//        {
-//          path: '/product/:slug',
-//          component: './src/templates/Product.vue'
-//        }
-//      ]
-//    }
-//  }

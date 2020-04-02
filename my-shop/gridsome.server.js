@@ -4,32 +4,16 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-
+const { camelizeKeys } = require('humps')
 const products = require('./src/data/capsule_1.json')
 
 module.exports = function (api) {
-  api.loadSource(store => {
-    const contentType = store.addContentType({
-      typeName: 'Products'
-    })
+  api.loadSource(actions => {
+    // Use Data Store API here
+    const productsCollection = actions.addCollection('Product')
 
-    for (const item of products) {
-      contentType.addNode({
-        id: item.id,
-        title: item.title
-      })
+    for (const product of camelizeKeys(products)) {
+      productsCollection.addNode(product)
     }
   })
 }
-
-module.exports = function (api) {
-  api.loadSource(({ addCollection }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-  })
-
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
-  })
-}
-
-
