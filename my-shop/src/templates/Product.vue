@@ -1,6 +1,7 @@
 <template>
   <Layout>
     {{ $page.product.title }}
+     {{ $page.product.ASIN }}
   </Layout>
 </template>
 

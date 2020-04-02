@@ -27,7 +27,7 @@ export default {
 
 <page-query>
 query AllProducts ($page: Int) {
-  allProduct (perPage: 10, page: $page) @paginate {
+  allProduct (perPage: 5, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage
