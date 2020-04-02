@@ -4,6 +4,8 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import '~/assets/css/bootstrap.css'
 import '~/assets/fonts/fontawesome/css/all.min.css'
+import '~/assets/css/responsive.css'
+import '~/assets/css/ui.css'
 
 
 
