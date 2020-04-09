@@ -15,6 +15,12 @@
   </div>
 </template>
 
+
+
+
+
+
+
 <static-query>
 query {
   metadata {
