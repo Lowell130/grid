@@ -6,7 +6,8 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-
+//bt4 js
+// import '~/assets/js/bootstrap.js'
 
 
 export default function (Vue, { router, head, isClient }) {
@@ -14,6 +15,3 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
   Vue.use(BootstrapVue)
 }
-
-
-
