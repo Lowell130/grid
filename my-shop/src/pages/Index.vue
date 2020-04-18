@@ -54,7 +54,7 @@ export default {
  methods: {
   getSrc (pro) {
   const { uRL } = pro.node.images
-  const src = Array.isArray(uRL) ? uRL[0] : uRL
+  const src = Array.isArray(uRL) ? uRL[1] : uRL
   console.log(src, JSON.parse(JSON.stringify(pro)))
   return src 
 }
