@@ -35,7 +35,7 @@ query {
         title
         images {
           uRL
-          }
+        }
       }
     }
   }
@@ -51,13 +51,12 @@ export default {
     title: "Hello, world!"
   },
 
- methods: {
-  getSrc (pro) {
-  const { uRL } = pro.node.images
-  const src = Array.isArray(uRL) ? uRL[1] : uRL
-  console.log(src, JSON.parse(JSON.stringify(pro)))
-  return src 
-}
+  methods: {
+    getSrc (pro) {
+      const { uRL } = pro.node.images
+
+      return uRL[1] || uRL[0]
+    }
   }
 
 };

@@ -14,7 +14,12 @@ module.exports = function (api) {
   api.loadSource(actions => {
     // Use Data Store API here   
     const productsCollection = actions.addCollection('Product')
+
     for (const product of camelizeKeys(products)) {
+      const { uRL } = product.images
+
+      product.images.uRL = Array.isArray(uRL) ? uRL : [uRL]
+
       productsCollection.addNode(product)
     }
   })
