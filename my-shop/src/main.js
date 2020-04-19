@@ -6,12 +6,16 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-//bt4 js
-// import '~/assets/js/bootstrap.js'
+//custom bt style
+
+import '~/assets/fonts/fontawesome/css/all.css';
+import '~/assets/scss/bootstrap.scss';
+import '~/assets/scss/main.scss';
 
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
   Vue.use(BootstrapVue)
+  
 }
