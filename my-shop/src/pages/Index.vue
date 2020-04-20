@@ -124,10 +124,10 @@
       </div>
 
       <template>
-        <QFeaturedPosts v-slot="{ posts: featured_posts }">
+        
           <div class="container">
             <div class="row">
-              <main class="col-md-12" v-for="fpost in featured_posts" :key="fpost.id">
+              <main class="col-md-12">
                 <article class="card card-product-list">
                   <div class="row no-gutters">
                     <aside class="col-md-3">
@@ -138,7 +138,7 @@
                     </aside>
                     <div class="col-md-6">
                       <div class="info-main">
-                        <a href="#" class="h5 title">{{fpost.title}}</a>
+                        <a href="#" class="h5 title">titolo</a>
                         <div class="rating-wrap mb-3">
                           <ul class="rating-stars">
                             <li style="width:80%" class="stars-active">
@@ -167,8 +167,8 @@
                     <aside class="col-sm-3">
                       <div class="info-aside">
                         <div class="price-wrap">
-                          <span class="price h5">{{fpost.listPrice}}</span>
-                          <del class="price-old">{{fpost.price}}</del>
+                          <span class="price h5">prezzo</span>
+                          <del class="price-old">altro prezzo</del>
                         </div>
                         <!-- info-price-detail // -->
                         <p class="text-success">Spedizione gratuita</p>
@@ -186,28 +186,15 @@
                   </div>
                 </article>
 
-                <g-link :key="fpost.id" :to="fpost.path">
-                  <h4>{{fpost.title}}</h4>
-                  <p>{{fpost.excerpt}}</p>
-                </g-link>
-                <g-link :to="fpost.path">
-                  <g-image :src="fpost.images.uRL" />
-                </g-link>
+               
               </main>
             </div>
           </div>
-        </QFeaturedPosts>
+    
       </template>
     </section>
   </Layout>
 </template>
-
-
-
-
-
-
-
 
 
 
@@ -237,28 +224,6 @@ query {
 
 }
 </page-query>
-
-
-<!-- query seconda lista prodotti 
-<static-query>
-query FeaturedPosts {
-  posts: allProduct(limit: 8) {
-    edges {
-      node {
-           id
-        title
-        price
-        listPrice
-        path
-        images {
-          uRL
-        }      
-      }
-    }
-  }
-}
-</static-query> -->
-
 
 
 
