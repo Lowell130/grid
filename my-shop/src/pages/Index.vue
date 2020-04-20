@@ -10,10 +10,10 @@
     </section>
     <section class="section-content">
       <div class="container">
-       <header class="section-heading">
-	<a href="/product-list/" class="btn btn-outline-primary float-right">Vedi tutti</a>
-	<h3 class="section-title">Prodotti del momento</h3>
-</header>
+        <header class="section-heading">
+          <a href="/product-list/" class="btn btn-outline-primary float-right">Vedi tutti</a>
+          <h3 class="section-title">Prodotti del momento</h3>
+        </header>
         <!-- sect-heading -->
 
         <div class="row">
@@ -29,65 +29,198 @@
                   <g-link :to="pro.node.path" class="title text-truncate">{{ pro.node.title }}</g-link>
                 </span>
 
-                <div class="rating-wrap">
-                 
-                 
-                </div>
-             
+                <div class="rating-wrap"></div>
+
                 <!-- price-wrap.// -->
               </figcaption>
               <figcaption class="info-wrap">
-                 
-		
-				<a href="#" class="btn btn-block btn-success"><i class="fas fa-shopping-cart"></i> {{ pro.node.listPrice }} </a>
-			</figcaption>
+                <a href="#" class="btn btn-block btn-success">
+                  <i class="fas fa-shopping-cart"></i>
+                  {{ pro.node.listPrice }}
+                </a>
+              </figcaption>
             </div>
           </div>
           <!-- col.// -->
         </div>
         <!-- row.// -->
       </div>
-    </section>
 
-    <!-- <div class="container top">
-      <div class="row pb-4">
-        <div class="col-lg-4 mb-4" v-for="pro in $page.allProduct.edges" :key="pro.id">
-         
-
-          <div class="card">
-            <g-image alt="Card image cap" class="card-img-top" :src="getSrc(pro)" />
-            <div class="card-body">
-              <h5 class="card-title text-truncate">{{ pro.node.title }}</h5>
-              <p
-                class="card-text"
-              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-         
-        </div>
+      <div class="container">
+        <header class="section-heading">
+          <h3 class="section-title">Ultimi arrivi</h3>
+        </header>
       </div>
 
-      <hr class="featurette-divider" />
-    </div>-->
+      <div class="container">
+        <div class="row">
+          <main class="col-md-12">
+            <!-- ============================ COMPONENT 3 ================================= -->
+
+            <article class="card card-product-list">
+              <div class="row no-gutters">
+                <aside class="col-md-3">
+                  <a href="#" class="img-wrap">
+                    <span class="badge badge-danger">NEW</span>
+                    <img src="../assets/images/8.jpg" />
+                  </a>
+                </aside>
+                <div class="col-md-6">
+                  <div class="info-main">
+                    <a href="#" class="h5 title">Apple air pods 2</a>
+                    <div class="rating-wrap mb-3">
+                      <ul class="rating-stars">
+                        <li style="width:80%" class="stars-active">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </li>
+                      </ul>
+                      <div class="label-rating">7/10</div>
+                    </div>
+                    <!-- rating-wrap.// -->
+
+                    <p>Take it as demo specs, ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam</p>
+                  </div>
+                  <!-- info-main.// -->
+                </div>
+                <aside class="col-sm-3">
+                  <div class="info-aside">
+                    <div class="price-wrap">
+                      <span class="price h5">$140</span>
+                      <del class="price-old">$198</del>
+                    </div>
+                    <!-- info-price-detail // -->
+                    <p class="text-success">Free shipping</p>
+                    <br />
+                    <p>
+                      <a href="#" class="btn btn-primary btn-block">Details</a>
+                      <a href="#" class="btn btn-light btn-block">
+                        <i class="fa fa-heart"></i>
+                        <span class="text">Add to wishlist</span>
+                      </a>
+                    </p>
+                  </div>
+                  <!-- info-aside.// -->
+                </aside>
+              </div>
+            </article>
+          </main>
+        </div>
+      </div>
+      <div class="container">
+        <header class="section-heading">
+          <h3 class="section-title">Ultimi arrivi 2</h3>
+        </header>
+      </div>
+
+      <template>
+        <QFeaturedPosts v-slot="{ posts: featured_posts }">
+          <div class="container">
+            <div class="row">
+              <main class="col-md-12" v-for="fpost in featured_posts" :key="fpost.id">
+                <article class="card card-product-list">
+                  <div class="row no-gutters">
+                    <aside class="col-md-3">
+                      <a href="#" class="img-wrap">
+                        <span class="badge badge-danger">NEW</span>
+                        <img src="../assets/images/8.jpg" />
+                      </a>
+                    </aside>
+                    <div class="col-md-6">
+                      <div class="info-main">
+                        <a href="#" class="h5 title">{{fpost.title}}</a>
+                        <div class="rating-wrap mb-3">
+                          <ul class="rating-stars">
+                            <li style="width:80%" class="stars-active">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                            </li>
+                          </ul>
+                          <div class="label-rating">7/10</div>
+                        </div>
+                        <!-- rating-wrap.// -->
+
+                        <p>Take it as demo specs, ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam</p>
+                      </div>
+                      <!-- info-main.// -->
+                    </div>
+                    <aside class="col-sm-3">
+                      <div class="info-aside">
+                        <div class="price-wrap">
+                          <span class="price h5">{{fpost.listPrice}}</span>
+                          <del class="price-old">{{fpost.price}}</del>
+                        </div>
+                        <!-- info-price-detail // -->
+                        <p class="text-success">Spedizione gratuita</p>
+                        <br />
+                        <p>
+                          <a href="#" class="btn btn-success btn-block">Acquista</a>
+                          <a href="#" class="btn btn-light btn-block">
+                            <i class="fa fa-heart"></i>
+                            <span class="text">Recensioni</span>
+                          </a>
+                        </p>
+                      </div>
+                      <!-- info-aside.// -->
+                    </aside>
+                  </div>
+                </article>
+
+                <g-link :key="fpost.id" :to="fpost.path">
+                  <h4>{{fpost.title}}</h4>
+                  <p>{{fpost.excerpt}}</p>
+                </g-link>
+                <g-link :to="fpost.path">
+                  <g-image :src="fpost.images.uRL" />
+                </g-link>
+              </main>
+            </div>
+          </div>
+        </QFeaturedPosts>
+      </template>
+    </section>
   </Layout>
 </template>
 
 
 
-<style lang="scss">
-@import '../assets/scss/fonts';
-// @import '../assets/scss/bootstrap.scss';
-// @import '../assets/scss/main.scss';
-// @import '../assets/fonts/fontawesome/css/all.css';
 
+
+
+
+
+
+
+
+<style lang="scss">
+@import "../assets/scss/fonts";
 </style>
 
 
 
 <page-query>
 query {
-  allProduct (limit: 16) {
+  allProduct (limit: 4) {
     edges {
       node {
         id
@@ -106,6 +239,27 @@ query {
 </page-query>
 
 
+<!-- query seconda lista prodotti 
+<static-query>
+query FeaturedPosts {
+  posts: allProduct(limit: 8) {
+    edges {
+      node {
+           id
+        title
+        price
+        listPrice
+        path
+        images {
+          uRL
+        }      
+      }
+    }
+  }
+}
+</static-query> -->
+
+
 
 
 <script>
@@ -117,7 +271,6 @@ export default {
   methods: {
     getSrc(pro) {
       const { uRL } = pro.node.images;
-
       return uRL[1] || uRL[0];
     }
   }

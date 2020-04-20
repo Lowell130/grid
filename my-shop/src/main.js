@@ -9,6 +9,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 //custom bt style
 
 import '~/assets/fonts/fontawesome/css/all.css';
+import '~/assets/scss/ui.scss';
+import '~/assets/scss/responsive.scss';
 import '~/assets/scss/bootstrap.scss';
 import '~/assets/scss/main.scss';
 
