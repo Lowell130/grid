@@ -16,6 +16,8 @@
         </header>
         <!-- sect-heading -->
 
+
+
         <div class="row">
           <div class="col-md-3" v-for="pro in $page.allProduct.edges" :key="pro.id">
             <div href="#" class="card card-product-grid">
@@ -117,81 +119,76 @@
           </main>
         </div>
       </div>
+
       <div class="container">
         <header class="section-heading">
           <h3 class="section-title">Ultimi arrivi 2</h3>
         </header>
       </div>
 
-      <template>
-        
-          <div class="container">
-            <div class="row">
-              <main class="col-md-12">
-                <article class="card card-product-list">
-                  <div class="row no-gutters">
-                    <aside class="col-md-3">
-                      <a href="#" class="img-wrap">
-                        <span class="badge badge-danger">NEW</span>
-                        <img src="../assets/images/8.jpg" />
-                      </a>
-                    </aside>
-                    <div class="col-md-6">
-                      <div class="info-main">
-                        <a href="#" class="h5 title">titolo</a>
-                        <div class="rating-wrap mb-3">
-                          <ul class="rating-stars">
-                            <li style="width:80%" class="stars-active">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                            </li>
-                          </ul>
-                          <div class="label-rating">7/10</div>
-                        </div>
-                        <!-- rating-wrap.// -->
-
-                        <p>Take it as demo specs, ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam</p>
-                      </div>
-                      <!-- info-main.// -->
+      <div class="container">
+        <div class="row">
+          <main class="col-md-12">
+            <article class="card card-product-list">
+              <div class="row no-gutters">
+                <aside class="col-md-3">
+                  <a href="#" class="img-wrap">
+                    <span class="badge badge-danger">NEW</span>
+                    <img src="../assets/images/8.jpg" />
+                  </a>
+                </aside>
+                <div class="col-md-6">
+                  <div class="info-main">
+                    <a href="#" class="h5 title">titolo</a>
+                    <div class="rating-wrap mb-3">
+                      <ul class="rating-stars">
+                        <li style="width:80%" class="stars-active">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </li>
+                      </ul>
+                      <div class="label-rating">7/10</div>
                     </div>
-                    <aside class="col-sm-3">
-                      <div class="info-aside">
-                        <div class="price-wrap">
-                          <span class="price h5">prezzo</span>
-                          <del class="price-old">altro prezzo</del>
-                        </div>
-                        <!-- info-price-detail // -->
-                        <p class="text-success">Spedizione gratuita</p>
-                        <br />
-                        <p>
-                          <a href="#" class="btn btn-success btn-block">Acquista</a>
-                          <a href="#" class="btn btn-light btn-block">
-                            <i class="fa fa-heart"></i>
-                            <span class="text">Recensioni</span>
-                          </a>
-                        </p>
-                      </div>
-                      <!-- info-aside.// -->
-                    </aside>
-                  </div>
-                </article>
+                    <!-- rating-wrap.// -->
 
-               
-              </main>
-            </div>
-          </div>
-    
-      </template>
+                    <p>Take it as demo specs, ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam</p>
+                  </div>
+                  <!-- info-main.// -->
+                </div>
+                <aside class="col-sm-3">
+                  <div class="info-aside">
+                    <div class="price-wrap">
+                      <span class="price h5">prezzo</span>
+                      <del class="price-old">altro prezzo</del>
+                    </div>
+                    <!-- info-price-detail // -->
+                    <p class="text-success">Spedizione gratuita</p>
+                    <br />
+                    <p>
+                      <a href="#" class="btn btn-success btn-block">Acquista</a>
+                      <a href="#" class="btn btn-light btn-block">
+                        <i class="fa fa-heart"></i>
+                        <span class="text">Recensioni</span>
+                      </a>
+                    </p>
+                  </div>
+                  <!-- info-aside.// -->
+                </aside>
+              </div>
+            </article>
+          </main>
+        </div>
+      </div>
     </section>
   </Layout>
 </template>
@@ -199,9 +196,15 @@
 
 
 
+
+
+
 <style lang="scss">
 @import "../assets/scss/fonts";
 </style>
+
+
+
 
 
 
@@ -221,9 +224,29 @@ query {
       }
     }
   }
-
 }
 </page-query>
+
+<!-- NEW QUERY FOR FEATURED PRODUCTS -->
+<page-query>
+query {
+  test: allProduct (limit: 3) {
+    edges {
+      node {
+        id
+        title
+        price
+        listPrice
+        path
+        images {
+          uRL
+        }
+      }
+    }
+  }
+}
+</page-query>
+
 
 
 
