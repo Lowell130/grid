@@ -58,6 +58,7 @@
 
       <div class="container">
         <div class="row">
+          <!-- START NEW PRODUCTS LIST -->
           <QFeaturedPosts v-slot="{ posts: featured_posts }">
             <main class="col-md-12" v-for="fpost in featured_posts" :key="fpost.id">
               <article class="card card-product-list">
@@ -121,6 +122,7 @@
               </article>
             </main>
           </QFeaturedPosts>
+             <!-- END NEW PRODUCTS LIST -->
         </div>
       </div>
     </section>
