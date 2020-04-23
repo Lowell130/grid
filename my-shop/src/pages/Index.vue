@@ -21,7 +21,7 @@
             <div href="#" class="card card-product-grid">
               <a href="#" class="img-wrap">
                 <g-link :to="pro.node.path">
-                  <g-image :src="getSrc(pro)" />
+                  <g-image :src="getSrc(pro.node.images)" />
                 </g-link>
               </a>
               <figcaption class="info-wrap">
@@ -46,10 +46,6 @@
         <!-- row.// -->
       </div>
 
-   
-
-      
-
       <div class="container">
         <header class="section-heading">
           <h3 class="section-title">Ultimi arrivi 2</h3>
@@ -66,7 +62,7 @@
                   <aside class="col-md-3">
                     <a href="#" class="img-wrap">
                       <span class="badge badge-danger">NEW</span>
-                      <img src="../assets/images/8.jpg" />
+                      <img :src="getSrc(fpost.images)" />
                      
                     </a>
                   </aside>
@@ -129,24 +125,13 @@
   </Layout>
 </template>
 
-
-
-
-
-
-
 <style lang="scss">
-@import "../assets/scss/fonts";
+  @import "../assets/scss/fonts";
 </style>
-
-
-
-
-
 
 <page-query>
 query {
-  allProduct (limit: 4) {
+  allProduct (limit: 1) {
     edges {
       node {
         id
@@ -163,11 +148,6 @@ query {
 }
 </page-query>
 
-
-
-
-
-
 <script>
 export default {
   metaInfo: {
@@ -175,8 +155,8 @@ export default {
   },
 
   methods: {
-    getSrc(pro) {
-      const { uRL } = pro.node.images;
+    getSrc(images) {
+      const { uRL } = images;
       return uRL[1] || uRL[0];
     }
   },

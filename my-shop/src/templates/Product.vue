@@ -1,9 +1,10 @@
 <template>
   <Layout>
     <div class="container">
-    {{ $page.product.title }}
-     {{ $page.product.ASIN }}
-   <span class="float-right"><strong>  {{ $page.product.price }}</strong></span>
+      <img :src="getSrc($page.product.images)" width="200px">
+      {{ $page.product.title }}
+      {{ $page.product.ASIN }}
+      <span class="float-right"><strong>  {{ $page.product.price }}</strong></span>
    </div>
    </Layout>
 </template>
@@ -21,6 +22,20 @@ query Product ($id: ID!) {
     id
     title
     price
+    images {
+      uRL
+    }
   }
 }
 </page-query>
+
+<script>
+export default {
+  methods: {
+    getSrc(images) {
+      const { uRL } = images;
+      return uRL[1] || uRL[0];
+    }
+  }
+}
+</script>
