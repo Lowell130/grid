@@ -19,11 +19,11 @@
         <div class="row">
           <div class="col-md-3" v-for="pro in $page.allProduct.edges" :key="pro.id">
             <div href="#" class="card card-product-grid">
-              <a href="#" class="img-wrap">
-                <g-link :to="pro.node.path">
+             
+                <g-link :to="pro.node.path" class="img-wrap">
                   <g-image :src="getSrc(pro.node.images)" />
                 </g-link>
-              </a>
+              
               <figcaption class="info-wrap">
                 <span>
                   <g-link :to="pro.node.path" class="title text-truncate">{{ pro.node.title }}</g-link>
@@ -63,13 +63,11 @@
                     <a href="#" class="img-wrap">
                       <span class="badge badge-danger">NEW</span>
                       <img :src="getSrc(fpost.images)" />
-                     
                     </a>
                   </aside>
                   <div class="col-md-6">
                     <div class="info-main">
-                     
-                        <g-link :to="fpost.path" class="h5 title">{{fpost.title}}</g-link>
+                      <g-link :to="fpost.path" class="h5 title">{{fpost.title}}</g-link>
                       <div class="rating-wrap mb-3">
                         <ul class="rating-stars">
                           <li style="width:80%" class="stars-active">
@@ -91,7 +89,10 @@
                       </div>
                       <!-- rating-wrap.// -->
 
-                      <p>Take it as demo specs, ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam</p>
+                      <p>
+                        {{fpost.description.substring(0,200)+"..." | strippedContent}}
+                        <g-link :to="fpost.path">+ info</g-link>
+                      </p>
                     </div>
                     <!-- info-main.// -->
                   </div>
@@ -105,11 +106,16 @@
                       <p class="text-success">Spedizione gratuita</p>
                       <br />
                       <p>
-                        <a href="#" class="btn btn-success btn-block">Acquista</a>
-                        <a href="#" class="btn btn-light btn-block">
+                        <a
+                          
+                          :href="fpost.uRL+affiliate"
+                          class="btn btn-success btn-block"
+                        >Acquista</a>
+                        <a :href="fpost.uRL+affiliate+reviews" class="btn btn-light btn-block">
                           <i class="fa fa-heart"></i>
                           <span class="text">Recensioni</span>
                         </a>
+                        <!-- <span>{{fpost.uRL}}</span> -->
                       </p>
                     </div>
                     <!-- info-aside.// -->
@@ -118,20 +124,21 @@
               </article>
             </main>
           </QFeaturedPosts>
-             <!-- END NEW PRODUCTS LIST -->
+          <!-- END NEW PRODUCTS LIST -->
         </div>
       </div>
     </section>
+    
   </Layout>
 </template>
 
 <style lang="scss">
-  @import "../assets/scss/fonts";
+@import "../assets/scss/fonts";
 </style>
 
 <page-query>
 query {
-  allProduct (limit: 1) {
+  allProduct (skip: 20 limit: 4) {
     edges {
       node {
         id
@@ -139,6 +146,7 @@ query {
         price
         listPrice
         path
+        uRL       
         images {
           uRL
         }
@@ -157,12 +165,25 @@ export default {
   methods: {
     getSrc(images) {
       const { uRL } = images;
-      return uRL[1] || uRL[0];
+      return images.uRL[1] || images.uRL[0];
     }
   },
 
   components: {
     QFeaturedPosts: () => import("../queries/QFeaturedProd.vue")
+  },
+  filters: {
+    strippedContent: function(string) {
+      return string.replace(/<\/?[^>]+>/gi, " ");
+    }
+  },
+  computed: {
+    affiliate: function() {
+      return '&tag=newdev-21';
+    },
+    reviews: function() {
+      return '#customerReviews';
+    }
   }
 };
 </script>

@@ -8,7 +8,7 @@ module.exports = {
   siteName: 'Amazon Shop',
   siteDescription: 'Simple products catalog with Gridsome',
   titleTemplate: '%s - MyShop',
-  siteUrl: '',
+  siteUrl: 'http://onespresso.it',
   plugins: [],
   templates: {
     Product: [
