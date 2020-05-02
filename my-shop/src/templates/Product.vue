@@ -6,7 +6,7 @@
       {{ $page.product.ASIN }}
       <span class="float-right"><strong>  {{ $page.product.price }}</strong></span>
     </div>-->
-    <section class="py-3 bg-light">
+    <div class="py-3 bg-light">
       <div class="container">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
@@ -22,14 +22,14 @@
           >{{ $page.product.title }}</li>
         </ol>
       </div>
-    </section>
+    </div>
     <div class="container top pb-4 mb-4">
       <div class="card">
         <div class="row no-gutters">
           <aside class="col-sm-6 border-right d-flex align-items-center justify-content-center">
             <article class="gallery-wrap">
               <div class="img-big-wrap text-center">
-                <img :src="getSrc($page.product.images)" />
+                <img :src="getSrc($page.product.images)" :alt="$page.product.title" />
               </div>
 
               <!-- <div class="thumbs-wrap">
@@ -56,7 +56,7 @@
             </article>
           </aside>
 
-          <main class="col-sm-6">
+          <div class="col-sm-6">
             <article class="content-body">
               <h2 class="title">{{ $page.product.title }}</h2>
               <div class="rating-wrap my-3">
@@ -102,11 +102,11 @@
 
               <!-- <p>{{ $page.product.description.substring(0,600)+"..." | strippedContent }}</p> -->
             </article>
-          </main>
+          </div>
         </div>
       </div>
     </div>
-    <section class="section-name padding-y bg">
+    <div class="div-name padding-y bg">
       <div class="container">
         <div class="row">
           <div class="col-md-8">
@@ -135,7 +135,7 @@
               <QFeaturedSidebar v-slot="{ sidebar: sidebar_prod }">
                 <article class="media mb-3" v-for="sidebar in sidebar_prod" :key="sidebar.id">
                   <g-link :to="sidebar.path" class="img-wrap">
-                    <img class="img-sm mr-3" :src="getSrc(sidebar.images)" />
+                    <img class="img-sm mr-3" :src="getSrc(sidebar.images)" :alt="sidebar.title" />
                   </g-link>
                   <div class="media-body">
                     <h6 class="mt-0">
@@ -149,7 +149,7 @@
           </aside>
         </div>
       </div>
-    </section>
+    </div>
   </Layout>
 </template>
 

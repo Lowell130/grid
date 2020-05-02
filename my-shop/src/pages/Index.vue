@@ -1,30 +1,28 @@
 <template>
   <Layout>
-    <section class="section-intro padding-y-sm">
+    <div class="div-intro padding-y-sm">
       <div class="container fludid">
-        <div class="intro-banner-wrap">
-          <g-image src="~/assets/images/banners/1.jpg" class="img-fluid rounded"></g-image>
-        </div>
+       HERO ZONE
       </div>
       <!-- container //  -->
-    </section>
-    <section class="section-content">
+    </div>
+    <div class="div-content">
       <div class="container">
-        <header class="section-heading">
+        <header class="div-heading">
           <a href="/product-list/" class="btn btn-outline-primary float-right">Vedi tutti</a>
-          <h3 class="section-title">Prodotti del momento</h3>
+          <h3 class="div-title">Prodotti del momento</h3>
         </header>
         <!-- sect-heading -->
 
         <div class="row">
           <div class="col-md-3" v-for="pro in $page.allProduct.edges" :key="pro.id">
-            <div href="#" class="card card-product-grid">
+            <div class="card card-product-grid">
              
                 <g-link :to="pro.node.path" class="img-wrap">
-                  <g-image :src="getSrc(pro.node.images)" />
+                  <g-image :src="getSrc(pro.node.images)" :alt="pro.node.title" />
                 </g-link>
               
-              <figcaption class="info-wrap">
+              <span class="info-wrap">
                 <span>
                   <g-link :to="pro.node.path" class="title text-truncate">{{ pro.node.title }}</g-link>
                 </span>
@@ -32,13 +30,13 @@
                 <div class="rating-wrap"></div>
 
                 <!-- price-wrap.// -->
-              </figcaption>
-              <figcaption class="info-wrap">
+              </span>
+              <span class="info-wrap">
                 <a href="#" class="btn btn-block btn-success">
                   <i class="fas fa-shopping-cart"></i>
                   {{ pro.node.listPrice }}
                 </a>
-              </figcaption>
+              </span>
             </div>
           </div>
           <!-- col.// -->
@@ -47,8 +45,8 @@
       </div>
 
       <div class="container mb-3">
-        <header class="section-heading">
-          <h3 class="section-title">Nuovi arrivi</h3>
+        <header class="div-heading">
+          <h3 class="div-title">Nuovi arrivi</h3>
         </header>
       </div>
 
@@ -56,7 +54,7 @@
         <div class="row">
           <!-- START NEW PRODUCTS LIST -->
           <QFeaturedPosts v-slot="{ posts: featured_posts }">
-            <main class="col-md-12" v-for="fpost in featured_posts" :key="fpost.id">
+            <div class="col-md-12" v-for="fpost in featured_posts" :key="fpost.id">
               <article class="card card-product-list">
                 <div class="row no-gutters">
                   <aside class="col-md-3">
@@ -118,12 +116,12 @@
                   </aside>
                 </div>
               </article>
-            </main>
+            </div>
           </QFeaturedPosts>
           <!-- END NEW PRODUCTS LIST -->
         </div>
       </div>
-    </section>
+    </div>
     
   </Layout>
 </template>
