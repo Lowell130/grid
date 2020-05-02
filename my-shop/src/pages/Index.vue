@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <section class="section-intro padding-y-sm">
-      <div class="container">
+      <div class="container fludid">
         <div class="intro-banner-wrap">
           <g-image src="~/assets/images/banners/1.jpg" class="img-fluid rounded"></g-image>
         </div>
@@ -46,9 +46,9 @@
         <!-- row.// -->
       </div>
 
-      <div class="container">
+      <div class="container mb-3">
         <header class="section-heading">
-          <h3 class="section-title">Ultimi arrivi 2</h3>
+          <h3 class="section-title">Nuovi arrivi</h3>
         </header>
       </div>
 
@@ -68,7 +68,7 @@
                   <div class="col-md-6">
                     <div class="info-main">
                       <g-link :to="fpost.path" class="h5 title">{{fpost.title}}</g-link>
-                      <div class="rating-wrap mb-3">
+                      <!-- <div class="rating-wrap mb-3">
                         <ul class="rating-stars">
                           <li style="width:80%" class="stars-active">
                             <i class="fa fa-star"></i>
@@ -86,7 +86,7 @@
                           </li>
                         </ul>
                         <div class="label-rating">7/10</div>
-                      </div>
+                      </div> -->
                       <!-- rating-wrap.// -->
 
                       <p>
@@ -100,17 +100,13 @@
                     <div class="info-aside">
                       <div class="price-wrap">
                         <span class="price h5">{{fpost.listPrice}}</span>
-                        <del class="price-old">{{fpost.price}}</del>
+                        <!-- <del class="price-old">{{fpost.price}}</del> -->
                       </div>
                       <!-- info-price-detail // -->
                       <p class="text-success">Spedizione gratuita</p>
                       <br />
                       <p>
-                        <a
-                          
-                          :href="fpost.uRL+affiliate"
-                          class="btn btn-success btn-block"
-                        >Acquista</a>
+                        <a :href="fpost.uRL+affiliate" class="btn btn-success btn-block">Acquista</a>
                         <a :href="fpost.uRL+affiliate+reviews" class="btn btn-light btn-block">
                           <i class="fa fa-heart"></i>
                           <span class="text">Recensioni</span>

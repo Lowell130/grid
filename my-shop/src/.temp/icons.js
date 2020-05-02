@@ -5,37 +5,37 @@ export default {
   "touchicons": [
     {
       "width": 76,
-      "src": "/assets/static/src/favicon.png?width=76&key=49944d8"
+      "src": "/assets/static/favicon.f22e9f3.e9336856f0bd419b68b589c95ea85974.png"
     },
     {
       "width": 152,
-      "src": "/assets/static/src/favicon.png?width=152&key=49944d8"
+      "src": "/assets/static/favicon.62d22cb.e9336856f0bd419b68b589c95ea85974.png"
     },
     {
       "width": 120,
-      "src": "/assets/static/src/favicon.png?width=120&key=49944d8"
+      "src": "/assets/static/favicon.1539b60.e9336856f0bd419b68b589c95ea85974.png"
     },
     {
       "width": 167,
-      "src": "/assets/static/src/favicon.png?width=167&key=49944d8"
+      "src": "/assets/static/favicon.dc0cdc5.e9336856f0bd419b68b589c95ea85974.png"
     },
     {
       "width": 180,
-      "src": "/assets/static/src/favicon.png?width=180&key=49944d8"
+      "src": "/assets/static/favicon.7b22250.e9336856f0bd419b68b589c95ea85974.png"
     }
   ],
   "favicons": [
     {
       "width": 16,
-      "src": "/assets/static/src/favicon.png?width=16&key=dfb6c0b"
+      "src": "/assets/static/favicon.ce0531f.e9336856f0bd419b68b589c95ea85974.png"
     },
     {
       "width": 32,
-      "src": "/assets/static/src/favicon.png?width=32&key=dfb6c0b"
+      "src": "/assets/static/favicon.ac8d93a.e9336856f0bd419b68b589c95ea85974.png"
     },
     {
       "width": 96,
-      "src": "/assets/static/src/favicon.png?width=96&key=dfb6c0b"
+      "src": "/assets/static/favicon.b9532cc.e9336856f0bd419b68b589c95ea85974.png"
     }
   ]
 }

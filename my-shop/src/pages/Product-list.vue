@@ -14,12 +14,7 @@
   
 </template>
 
-<style lang="scss">
- .container {
-  margin-top: 80px;
-	
-}
-</style>
+
 
 <script>
 import { Pager } from 'gridsome'

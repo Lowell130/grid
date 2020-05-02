@@ -1,21 +1,21 @@
-// QFeaturedProd.vue
+// QSidebarProd.vue
 <template>
   <span>
-    <slot v-bind:posts="posts"></slot>
+    <slot v-bind:sidebar="sidebar"></slot>
   </span>
 </template>
 <script>
 export default {
   computed: {
-    posts() {
-      return this.$static.posts && this.$static.posts.edges.map(e => e.node);
+    sidebar() {
+      return this.$static.sidebar && this.$static.sidebar.edges.map(e => e.node);
     }
   }
 };
 </script>
 <static-query>
-query FeaturedPosts {
-  posts: allProduct(limit: 10) {
+query FeaturedSidebar {
+  sidebar: allProduct (limit: 4, sortBy: "listPrice", order: DESC) {
    edges {
       node {
         id

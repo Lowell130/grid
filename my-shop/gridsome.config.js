@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Amazon Shop',
+  siteName: 'Onespresso',
   siteDescription: 'Simple products catalog with Gridsome',
   titleTemplate: '%s - MyShop',
   siteUrl: 'http://onespresso.it',
