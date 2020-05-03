@@ -1,8 +1,8 @@
 // QFeaturedProd.vue
 <template>
-  <span>
+  <div>
     <slot v-bind:posts="posts"></slot>
-  </span>
+  </div>
 </template>
 <script>
 export default {

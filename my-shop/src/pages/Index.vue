@@ -22,21 +22,17 @@
                   <g-image :src="getSrc(pro.node.images)" :alt="pro.node.title" />
                 </g-link>
               
-              <span class="info-wrap">
-                <span>
-                  <g-link :to="pro.node.path" class="title text-truncate">{{ pro.node.title }}</g-link>
-                </span>
+              <div class="info-wrap">             
+                  <g-link :to="pro.node.path" class="title text-truncate">{{ pro.node.title }}</g-link>             
+              </div>
 
-                <div class="rating-wrap"></div>
-
-                <!-- price-wrap.// -->
-              </span>
-              <span class="info-wrap">
+              <div class="info-wrap">
                 <a href="#" class="btn btn-block btn-success">
                   <i class="fas fa-shopping-cart"></i>
                   {{ pro.node.listPrice }}
                 </a>
-              </span>
+              </div>
+
             </div>
           </div>
           <!-- col.// -->
@@ -55,13 +51,14 @@
           <!-- START NEW PRODUCTS LIST -->
           <QFeaturedPosts v-slot="{ posts: featured_posts }">
             <div class="col-md-12" v-for="fpost in featured_posts" :key="fpost.id">
-              <article class="card card-product-list">
+              <div class="card card-product-list">
                 <div class="row no-gutters">
                   <aside class="col-md-3">
-                    <a href="#" class="img-wrap">
+                   
+                    <g-link :to="fpost.path" class="img-wrap">
                       <span class="badge badge-danger">NEW</span>
-                      <img :src="getSrc(fpost.images)" />
-                    </a>
+                      <img :src="getSrc(fpost.images)" :alt="fpost.title" />
+                    </g-link>
                   </aside>
                   <div class="col-md-6">
                     <div class="info-main">
@@ -88,7 +85,7 @@
                       <!-- rating-wrap.// -->
 
                       <p>
-                        {{fpost.description.substring(0,200)+"..." | strippedContent}}
+                        {{fpost.description.substring(0,300)+"..." | strippedContent}}
                         <g-link :to="fpost.path">+ info</g-link>
                       </p>
                     </div>
@@ -97,7 +94,7 @@
                   <aside class="col-sm-3">
                     <div class="info-aside">
                       <div class="price-wrap">
-                        <span class="price h5">{{fpost.listPrice}}</span>
+                        <h5 class="price h5">{{fpost.listPrice}}</h5>
                         <!-- <del class="price-old">{{fpost.price}}</del> -->
                       </div>
                       <!-- info-price-detail // -->
@@ -115,13 +112,14 @@
                     <!-- info-aside.// -->
                   </aside>
                 </div>
-              </article>
+              </div>
             </div>
           </QFeaturedPosts>
           <!-- END NEW PRODUCTS LIST -->
         </div>
       </div>
     </div>
+     
     
   </Layout>
 </template>

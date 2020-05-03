@@ -1,8 +1,8 @@
 // QSidebarProd.vue
 <template>
-  <span>
+  <div>
     <slot v-bind:sidebar="sidebar"></slot>
-  </span>
+  </div>
 </template>
 <script>
 export default {
