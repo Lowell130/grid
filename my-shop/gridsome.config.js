@@ -6,8 +6,8 @@
 
 module.exports = {
   siteName: 'Onespresso',
-  siteDescription: 'Simple products catalog with Gridsome',
-  titleTemplate: '%s - MyShop',
+  siteDescription: 'Cialde e capsule caffè compatibili ai migliori prezzi',
+  titleTemplate: '%s - Shop',
   siteUrl: 'http://onespresso.it',
   plugins: [],
   templates: {

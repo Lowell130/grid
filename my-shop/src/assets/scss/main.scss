@@ -1,6 +1,6 @@
-// .top {
-//   margin-top: 80px;
-// }
+.top {
+   margin-top: 40px;
+ }
 
 .img-wrap {
   padding: 10px;
@@ -8,7 +8,7 @@
 
 .price {
   font-size: 2rem;
-} 
+}
 
 .gallery-wrap {
   .img-big-wrap {
@@ -22,3 +22,8 @@
   }
 }
 
+.card-product-grid {
+  .img-wrap {
+    height: 184px;
+  }
+}

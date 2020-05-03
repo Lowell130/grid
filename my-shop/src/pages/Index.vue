@@ -99,7 +99,7 @@
                       </div>
                       <!-- info-price-detail // -->
                       <p class="text-success">Spedizione gratuita</p>
-                      <br />
+                     
                       <p>
                         <a :href="fpost.uRL+affiliate" class="btn btn-success btn-block">Acquista</a>
                         <a :href="fpost.uRL+affiliate+reviews" class="btn btn-light btn-block">

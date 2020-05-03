@@ -69,7 +69,7 @@
                   </li>
                 </ul>
                 <small class="label-rating text-muted">
-                  <a :href="$page.product.uRL+reviews">Leggi recensioni</a>
+                  <a :href="$page.product.uRL+reviewsAmz">Leggi recensioni</a>
                 </small>
                 <small class="label-rating text-success" v-if="$page.product.discount !== '0%'">
                   <i class="fa fa-clipboard-check"></i>&nbsp;
@@ -208,7 +208,7 @@ metaInfo() {
     affiliate: function() {
       return "&tag=newdev-21";
     },
-    reviews: function() {
+    reviewsAmz: function() {
       return "#customerReviews";
     }
   }
