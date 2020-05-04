@@ -1,11 +1,11 @@
 export default [
   {
-    path: "/product-list/:page(\\d+)?/",
-    component: () => import(/* webpackChunkName: "page--src-pages-product-list-vue" */ "C:\\Users\\39328\\Desktop\\grid\\my-shop\\src\\pages\\Product-list.vue")
+    path: "/product/:title/:aSIN/",
+    component: () => import(/* webpackChunkName: "page--src-templates-product-vue" */ "C:\\Users\\39328\\Desktop\\grid\\my-shop\\src\\templates\\Product.vue")
   },
   {
-    path: "/product/:title/",
-    component: () => import(/* webpackChunkName: "page--src-templates-product-vue" */ "C:\\Users\\39328\\Desktop\\grid\\my-shop\\src\\templates\\Product.vue")
+    path: "/product-list/:page(\\d+)?/",
+    component: () => import(/* webpackChunkName: "page--src-pages-product-list-vue" */ "C:\\Users\\39328\\Desktop\\grid\\my-shop\\src\\pages\\Product-list.vue")
   },
   {
     path: "/about/",

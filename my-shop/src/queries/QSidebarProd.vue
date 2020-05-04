@@ -15,7 +15,7 @@ export default {
 </script>
 <static-query>
 query FeaturedSidebar {
-  sidebar: allProduct (limit: 4, sortBy: "listPrice", order: DESC) {
+  sidebar: allProduct (limit: 4, sortBy: "price", order: DESC) {
    edges {
       node {
         id

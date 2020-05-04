@@ -111,20 +111,32 @@
         <div class="row">
           <div class="col-md-8">
             <h5 class="title-description">Descrizione prodotto</h5>
-            <p>{{ $page.product.description | strippedContent }}</p>
+            <p>In questa pagina puoi acquistare cialde e capsule caffè compatibili e originali. Il prodotto <strong>{{$page.product.title}}</strong>, marca <strong>{{$page.product.brand}}</strong>, è compatibile con tutte la macchine per caffè espresso.
+               A seguire troverai una descrizione dettagliata del prodotto e dell'offerta commerciale. </p>
+                <hr>
+            <p><strong>Descrizione dettagliata:</strong> {{ $page.product.description | strippedContent }}</p>
 
-            <!-- <ul class="list-check">
-              <li>Material: Stainless steel</li>
-              <li>Weight: 82kg</li>
-              <li>built-in drip tray</li>
-              <li>Open base for pots and pans</li>
-              <li>On request available in propane execution</li>
-            </ul>-->
-            <h5 class="title-description">Specifiche</h5>
+          <table class="table table-bordered">
+			<tbody><tr> <th colspan="2">Offerta</th> </tr>
+			<tr> <td>COD.</td><td>{{$page.product.aSIN}}</td> </tr>
+      <tr> <td>Recensioni prodotto</td><td>    <a :href="$page.product.uRL+reviewsAmz">Recensioni</a></td> </tr>
+			<tr> <td>Marca</td><td>{{$page.product.brand}}</td> </tr>
+			<tr> <td>Sale Rank	</td> <td> {{$page.product.salesRank}} </td></tr>		
+			<tr> <td>Prezzo</td><td>{{$page.product.listPrice}}€</td> </tr>
+			<tr> <td>Prezzo scontato</td><td>{{$page.product.price}}€</td> </tr>
+			<tr> <td>% di sconto</td><td>{{$page.product.discount}}</td> </tr>
+
+
+		
+
+		</tbody></table>
+    <small><ul><li>
+      *Sale Rank - Posizione classifica più venduti su Amazon.it</li></ul></small>
+            <!-- <h5 class="title-description">Dettagli</h5>
 
             <ul>
-              <li v-for="det in $page.product.productDetails.description.slice(0,6)" :key="det.id">{{det}}</li>
-            </ul>
+              <li v-for="det in $page.product.productDetails.description.slice(0,5)" :key="det.id">{{det}}</li>
+            </ul> -->
           </div>
           <!-- col.// -->
 
@@ -164,6 +176,9 @@ query Product ($id: ID!) {
   product (id: $id) {
     id
     title
+    aSIN
+    salesRank
+    brand
     price
 	path
 	listPrice

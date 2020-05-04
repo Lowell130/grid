@@ -13,7 +13,7 @@ module.exports = {
   templates: {
     Product: [
       {
-        path: '/product/:title',
+        path: '/product/:title/:aSIN',
         component: './src/templates/Product.vue'
       }
     ]

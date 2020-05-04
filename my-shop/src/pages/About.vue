@@ -1,8 +1,8 @@
 <template>
   <Layout>
-    <div class="container">
-    <h1>About us</h1>
-    <p><i class="fab fa-500px"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
+    <div class="container top">
+    <h1>Termini</h1>
+    <p><i class="fab fa-500px"></i> Questo sito partecipa al Programma Affiliazione Amazon Europe S.r.l., un programma di affiliazione che consente ai siti di percepire una commissione pubblicitaria pubblicizzando e fornendo link al sito Amazon.it.</p>
     </div>
   </Layout>
 </template>
@@ -10,7 +10,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'About us'
+    title: 'Termini'
   }
 }
 </script>

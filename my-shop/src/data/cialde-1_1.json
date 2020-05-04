@@ -1498,60 +1498,7 @@
         "ChildASIN": "",
         "Reviews": ""
     },
-    {
-        "ASIN": "B075X1T5B7",
-        "Brand": "Caff%C3%A8 Trombetta",
-        "Title": "Caffè Trombetta Cialda Più Crema - 350 g",
-        "Category": "",
-        "Description": "Descrizione\n \t\n \t\n \t\t\n \t\t\tCaffé Trombetta Più Crema miscela di caffé torrefatto, macinato e confezionato in atmosfera protettiva in cialda 44 mm - n. 1 box contenente n. 50 cialde.\n\t\t\t\t \t\n\t\t\t\t\t\n \t\t\n \t\t\n \t\n \n \t\n \t\tIngredienti\n \t\n \t\n \t\t\n \t\t\tcaffè torrefatto\n\t\t\t\t \t\n\t\t\t\t\t\n \t\t\n \t\t\n \t\n \n \n \n \n \n \n Visualizza tutta la Descrizione prodotto",
-        "WordCount": 57,
-        "Rating": "3,8",
-        "ListPrice": "7,49",
-        "Price": "6,99",
-        "Discount": "7%",
-        "Shipping": 0,
-        "TotalPrice": 0,
-        "Stock": 0,
-        "ParentASIN": "",
-        "Available": false,
-        "Fulfilled": false,
-        "Thumbnail": "https://m.media-amazon.com/images/I/91ij0avdMPL._AC_UL320_ML3_.jpg",
-        "URL": "https://www.amazon.it/Caffè-Trombetta-Cialda-Più-Crema/dp/B075X1T5B7/ref=sr_1_55?__mk_it_IT=%25u00c5M%25u00c5%25u017d%25u00d5%25u00d1&amp;keywords=Cialde&amp;qid=1582036460&amp;refinements=p_76:490210031&amp;rnid=490209031&amp;rps=1&amp;s=grocery&amp;sr=1-55",
-        "Images": {
-            "URL": [
-                "https://images-na.ssl-images-amazon.com/images/I/91ij0avdMPL._AC_SL1500_.jpg",
-                "https://images-na.ssl-images-amazon.com/images/I/91VzbFUJZ%2BL._AC_SL1500_.jpg",
-                "https://images-na.ssl-images-amazon.com/images/I/311Un3S3xNL._AC_.jpg"
-            ]
-        },
-        "Features": "",
-        "TechnicalDetails": "",
-        "ProductDetails": {
-            "Description": [
-                "Peso articolo=349 g",
-                "Nome del prodotto=Cialda Più Crema",
-                "Peso=350 grammi",
-                "Unità=1  each",
-                "Istruzioni di conservazione=Conservare in luogo fresco e asciutto",
-                "Origine=Italia",
-                "Marca=Caffè Trombetta",
-                "Format=Cialde monodose",
-                "Contenuto di caffeina=Con caffeina",
-                "Produttore=Caffè Trombetta",
-                "ASIN=B075X1T5B7",
-                "Media recensioni=3.5 su 5 stelle\n      \n    \n  \n  \n  \n    \n      23 recensioni clienti",
-                "Posizione nella classifica Bestseller di Amazon=n. 1.065 in Alimentari e cura della casa (Visualizza i Top 100 nella categoria Alimentari e cura della casa)\n \n\n\n\n\n\n\n.zg_hrsr { margin: 0; padding: 0; list-style-type: none; }\n.zg_hrsr_item { margin: 0 0 0 10px; }\n.zg_hrsr_rank { display: inline-block; width: 80px; text-align: right; }\n\n\n\n    \n    n.428\n    in Cialde e capsule di caffè",
-                "Peso di spedizione=558 g",
-                "Disponibile su Amazon.it a partire dal=24 agosto 2017"
-            ]
-        },
-        "SalesRank": 1065,
-        "UPC": "",
-        "EAN": "",
-        "Prime": false,
-        "ChildASIN": "",
-        "Reviews": ""
-    },
+   
     {
         "ASIN": "B07X25Q34D",
         "Brand": "Note d%27Espresso",

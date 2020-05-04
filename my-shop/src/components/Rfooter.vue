@@ -1,8 +1,8 @@
 <template>
    <!-- FOOTER -->
   <footer class="container py-4">
-    <p class="float-right"><a href="/">Back to top</a></p>
-    <p>&copy; 2017-2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    
+    <p>&copy; Onespresso.it, Tutti i diritti riservati &middot; <a href="/about/">Termini</a></p>
   </footer>
 </template>
 
