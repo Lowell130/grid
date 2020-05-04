@@ -82,7 +82,7 @@
                       <!-- rating-wrap.// -->
 
                       <p>
-                        {{fpost.description.substring(0,300)+"..." | strippedContent}}
+                        {{fpost.description.substring(0,300)+" " | strippedContent}}
                         <g-link :to="fpost.path">+ info</g-link>
                       </p>
                     </div>
