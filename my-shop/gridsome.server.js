@@ -6,9 +6,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const { camelizeKeys } = require('humps')
-  const products = require('./src/data/capsule_1.json')
-
-  //  const products = require('./src/data/cia2.json')
+  //const products = require('./src/data/capsule_1.json')
+  const products = require('./src/data/cia2.json')
 
 module.exports = function (api) {
   api.loadSource(actions => {
