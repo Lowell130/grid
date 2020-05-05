@@ -7,9 +7,9 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="/">Home</b-nav-item>
+        <!-- <b-nav-item href="/">Home</b-nav-item> -->
         <!-- <b-nav-item href="/about/">Chi siamo</b-nav-item> -->
-        <b-nav-item href="/product-list/">Prodotti</b-nav-item>
+        <b-nav-item href="/product-list/">Tutti i prodotti</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->

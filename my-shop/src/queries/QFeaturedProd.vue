@@ -15,7 +15,7 @@ export default {
 </script>
 <static-query>
 query FeaturedPosts {
-  posts: allProduct(limit: 10) {
+  posts: allProduct(limit: 15) {
    edges {
       node {
         id

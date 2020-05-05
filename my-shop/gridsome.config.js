@@ -7,7 +7,7 @@
 module.exports = {
   siteName: 'Onespresso',
   siteDescription: 'Cialde e capsule caffè compatibili ai migliori prezzi',
-  titleTemplate: '%s - Shop',
+  titleTemplate: '%s - Onespresso.it',
   siteUrl: 'http://onespresso.it',
   plugins: [],
   templates: {

@@ -7,10 +7,12 @@
       </button>
     </section>
     <div class="div-content">
+
+
       <div class="container">
         <header class="div-heading my-4">
           <a href="/product-list/" class="btn btn-outline-primary float-right">Vedi tutti</a>
-          <h3 class="div-title">Top Prodotti</h3>
+          <h3 class="div-title">Nuovi</h3>
         </header>
         <!-- sect-heading -->
 
@@ -40,7 +42,7 @@
 
       <div class="container mb-3">
         <header class="div-heading">
-          <h3 class="div-title">Nuovi arrivi</h3>
+          <h3 class="div-title">Lista prodotti</h3>
         </header>
       </div>
 
@@ -115,7 +117,7 @@
           <!-- END NEW PRODUCTS LIST -->
         </div>
            <div class="div-heading mb-4">
-          <a href="/product-list/" class="btn btn-outline-primary float-right">Vedi tutti i prodotti</a>
+          <a href="/product-list/" class="btn btn-outline-primary float-right">Tutti i prodotti</a>
          <p>&nbsp;</p>
         </div>
       </div>
@@ -190,7 +192,7 @@ button:focus {
 
 <page-query>
 query {
-  allProduct (limit: 4, skip: 20) {
+  allProduct (limit: 4, skip: 60) {
     edges {
       node {
         id
@@ -211,7 +213,7 @@ query {
 <script>
 export default {
   metaInfo: {
-    title: "Hello, world!"
+    title: "Capsule e cialde compatibili e originali ai migliori prezzi!"
   },
 
   methods: {
