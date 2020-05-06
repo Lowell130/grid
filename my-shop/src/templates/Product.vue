@@ -234,20 +234,24 @@ export default {
     return {
       title: this.$page.product.title.substring(0, 70) + "...",
       meta: [
-        { key: "description", name: "description", content: this.$page.product.title },
+        {
+          key: "description",
+          name: "description",
+          content: this.$page.product.title
+        },
         //  { property: "og:type", content: 'product'},
         { property: "og:title", content: this.$page.product.title },
         { property: "og:description", content: this.ogDesc },
-        { property: "og:url", content: this.$page.product.uRL },       
+        { property: "og:url", content:`http://onespresso.it`+this.postUrl},
         { property: "og:image", content: this.ogImageUrl },
         // { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: this.$page.product.title },
         { name: "twitter:description", content: this.ogDesc },
         // { name: "twitter:site", content: "@cossssmin" },
         // { name: "twitter:creator", content: "@cossssmin" },
-         { name: "twitter:image", content: this.ogImageUrl },
-      ],
-    }
+        { name: "twitter:image", content: this.ogImageUrl }
+      ]
+    };
   },
   components: {
     QFeaturedSidebar: () => import("../queries/QSidebarProd.vue")
@@ -277,7 +281,10 @@ export default {
       );
     },
     ogDesc() {
-      return this.$page.product.description.substring(0, 250);
+      return this.$page.product.title.substring(0, 250);
+    },
+    postUrl() {
+      return (this.$page.product.path)
     }
   }
 };

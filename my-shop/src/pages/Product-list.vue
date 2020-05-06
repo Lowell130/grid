@@ -49,7 +49,7 @@
                       </small>
                     </div>
                     <p>
-                      {{product.description.substring(0,300)+"..." | strippedContent}}
+                      {{product.description.substring(0,100)+"..." | strippedContent}}
                       <g-link :to="product.path">+ info</g-link>
                     </p>
                   </article>

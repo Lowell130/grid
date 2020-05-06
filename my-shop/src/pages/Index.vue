@@ -65,7 +65,7 @@
                         <g-link :to="fpost.path" class="h5 title">{{fpost.title}}</g-link>
 
                         <p>
-                          {{fpost.description.substring(0,300)+" " | strippedContent}}
+                          {{fpost.description.substring(0,100)+" " | strippedContent}}
                           <g-link :to="fpost.path">+ info</g-link>
                         </p>
                       </div>
