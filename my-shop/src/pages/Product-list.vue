@@ -55,23 +55,25 @@
                   </article>
                   <!-- col.// -->
                   <div class="info-aside col-md-3">
-                    <div class="price-wrap">
-                      <span class="price h5">{{ product.listPrice }}</span>
-                      <del class="price-old" v-if="product.discount !== '0%'">{{ product.price }}</del>
+                    <div class="price-wrap text-center">
+                      <span class="price h5">{{ product.price }}€</span>
+                      <del class="price-old" v-if="product.discount !== '0%'">{{ product.listPrice }}€</del>
                     </div>
-                    <!-- info-price-detail // -->
-                    <p class="text-success">Spedizione Gratuita</p>
-
+                   
                     <p>
                       <a
                         :href="product.uRL+affiliate"
                         class="btn btn-success btn-lg btn-block"
                       >Acquista</a>
-                      <!-- <a href="#" class="btn btn-light btn-block"><i class="fa fa-heart"></i> 
-          
-						<span class="text">Add to wishlist</span>
-                      </a>-->
+                   
                     </p>
+                             <p>
+                        <a :href="product.uRL+affiliate+reviews" class="btn btn-warning btn-lg btn-block mt-1">
+                          <i class="fa fa-heart"></i>
+                          <span class="text">Recensioni</span>
+                        </a>
+                     
+                      </p>
                   </div>
                 </div>
                 <!-- row.// -->
@@ -130,7 +132,7 @@ export default {
 
 <page-query>
 query AllProducts ($page: Int) {
-  allProduct (perPage: 13, page: $page) @paginate {
+  allProduct (sortBy: "discount", order: DESC, perPage: 13, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage

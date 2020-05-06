@@ -84,7 +84,7 @@
 
               <div class="form-row d-flex align-items-center">
                 <div class="col">
-                  <var class="price h4">{{ $page.product.listPrice }}</var>
+                  <var class="price h4">{{ $page.product.price }}</var>
                   <span class="text-muted">EUR</span>
                 </div>
                 <div class="col">
@@ -111,32 +111,65 @@
         <div class="row">
           <div class="col-md-8">
             <h5 class="title-description">Descrizione prodotto</h5>
-            <p>In questa pagina puoi acquistare cialde e capsule caffè compatibili e originali. Il prodotto <strong>{{$page.product.title}}</strong>, marca <strong>{{$page.product.brand}}</strong>, è compatibile con tutte la macchine per caffè espresso.
-               A seguire troverai una descrizione dettagliata del prodotto e dell'offerta commerciale. </p>
-                <hr>
-            <p><strong>Descrizione dettagliata:</strong> {{ $page.product.description | strippedContent }}</p>
+            <p>
+              In questa pagina puoi acquistare cialde e capsule caffè compatibili e originali. Il prodotto
+              <strong>{{$page.product.title}}</strong>, marca
+              <strong>{{$page.product.brand}}</strong>, è compatibile con tutte la macchine per caffè espresso.
+              A seguire troverai una descrizione dettagliata del prodotto e dell'offerta commerciale.
+            </p>
+            <hr />
+            <p>
+              <strong>Descrizione dettagliata:</strong>
+              {{ $page.product.description | strippedContent }}
+            </p>
 
-          <table class="table table-bordered">
-			<tbody><tr> <th colspan="2">Offerta</th> </tr>
-			<tr> <td>COD.</td><td>{{$page.product.aSIN}}</td> </tr>
-      <tr> <td>Recensioni prodotto</td><td>    <a :href="$page.product.uRL+reviewsAmz">Recensioni</a></td> </tr>
-			<tr> <td>Marca</td><td>{{$page.product.brand}}</td> </tr>
-			<tr> <td>Sale Rank	</td> <td> {{$page.product.salesRank}} </td></tr>		
-			<tr> <td>Prezzo</td><td>{{$page.product.listPrice}}€</td> </tr>
-			<tr> <td>Prezzo scontato</td><td>{{$page.product.price}}€</td> </tr>
-			<tr> <td>% di sconto</td><td>{{$page.product.discount}}</td> </tr>
-
-
-		
-
-		</tbody></table>
-    <small><ul><li>
-      *Sale Rank - Posizione classifica più venduti su Amazon.it</li></ul></small>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <th colspan="2">Offerta</th>
+                </tr>
+                <tr>
+                  <td>COD.</td>
+                  <td>{{$page.product.aSIN}}</td>
+                </tr>
+                <tr>
+                  <td>Recensioni prodotto</td>
+                  <td>
+                    <a :href="$page.product.uRL+reviewsAmz">Recensioni</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Marca</td>
+                  <td>{{$page.product.brand}}</td>
+                </tr>
+                <tr>
+                  <td>Sale Rank</td>
+                  <td>{{$page.product.salesRank}}</td>
+                </tr>
+                <tr>
+                  <td>Prezzo</td>
+                  <td>{{$page.product.listPrice}}€</td>
+                </tr>
+                <tr>
+                  <td>Prezzo scontato</td>
+                  <td>{{$page.product.price}}€</td>
+                </tr>
+                <tr>
+                  <td>% di sconto</td>
+                  <td>{{$page.product.discount}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <small>
+              <ul>
+                <li>*Sale Rank - Posizione classifica più venduti su Amazon.it</li>
+              </ul>
+            </small>
             <!-- <h5 class="title-description">Dettagli</h5>
 
             <ul>
               <li v-for="det in $page.product.productDetails.description.slice(0,5)" :key="det.id">{{det}}</li>
-            </ul> -->
+            </ul>-->
           </div>
           <!-- col.// -->
 
@@ -153,7 +186,7 @@
                     <h6 class="mt-0">
                       <g-link :to="sidebar.path">{{sidebar.title}}</g-link>
                     </h6>
-                    <p class="mb-2">{{sidebar.listPrice}}</p>
+                    <span class="badge badge-pill badge-success">{{sidebar.price}}€</span>
                   </div>
                 </article>
               </QFeaturedSidebar>
@@ -196,18 +229,30 @@ query Product ($id: ID!) {
 </page-query>
 
 <script>
-
 export default {
- 
-metaInfo() {
-        return {
-            title: this.$page.product.title,
-        }
-    },
+  metaInfo() {
+    return {
+      title: this.$page.product.title.substring(0, 70) + "...",
+      meta: [
+        { key: "description", name: "description", content: this.$page.product.title },
+        //  { property: "og:type", content: 'product'},
+        { property: "og:title", content: this.$page.product.title },
+        { property: "og:description", content: this.ogDesc },
+        { property: "og:url", content: this.$page.product.uRL },       
+        { property: "og:image", content: this.ogImageUrl },
+        // { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: this.$page.product.title },
+        { name: "twitter:description", content: this.ogDesc },
+        // { name: "twitter:site", content: "@cossssmin" },
+        // { name: "twitter:creator", content: "@cossssmin" },
+         { name: "twitter:image", content: this.ogImageUrl },
+      ],
+    }
+  },
   components: {
     QFeaturedSidebar: () => import("../queries/QSidebarProd.vue")
   },
- 
+
   methods: {
     getSrc(images) {
       const { uRL } = images;
@@ -225,6 +270,14 @@ metaInfo() {
     },
     reviewsAmz: function() {
       return "#customerReviews";
+    },
+    ogImageUrl() {
+      return (
+        this.$page.product.images.uRL[0] || this.$page.product.images.uRL[1]
+      );
+    },
+    ogDesc() {
+      return this.$page.product.description.substring(0, 250);
     }
   }
 };

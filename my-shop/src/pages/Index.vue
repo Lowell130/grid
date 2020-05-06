@@ -7,11 +7,9 @@
       </button>
     </section>
     <div class="div-content">
-
-
       <div class="container">
         <header class="div-heading my-4">
-          <a href="/product-list/" class="btn btn-outline-primary float-right">Vedi tutti</a>
+          <!-- <a href="/product-list/" class="btn btn-outline-primary float-right">Vedi tutti</a> -->
           <h3 class="div-title">Nuovi</h3>
         </header>
         <!-- sect-heading -->
@@ -30,7 +28,7 @@
               <div class="info-wrap">
                 <a href="#" class="btn btn-block btn-success">
                   <i class="fas fa-shopping-cart"></i>
-                  {{ pro.node.price }}
+                  {{ pro.node.price }}€
                 </a>
               </div>
             </div>
@@ -42,7 +40,9 @@
 
       <div class="container mb-3">
         <header class="div-heading">
+            <a href="/product-list/" class="btn btn-info float-right">Vedi tutti</a>
           <h3 class="div-title">Lista prodotti</h3>
+         
         </header>
       </div>
 
@@ -52,76 +52,53 @@
           <QFeaturedPosts v-slot="{ posts: featured_posts }">
             <div class="col-md-12" v-for="fpost in featured_posts" :key="fpost.id">
               <div class="card card-product-list">
-                <div class="row no-gutters">
-                  <aside class="col-md-3">
-                    <g-link :to="fpost.path" class="img-wrap">
-                      <span class="badge badge-danger">NEW</span>
-                      <img :src="getSrc(fpost.images)" :alt="fpost.title" />
-                    </g-link>
-                  </aside>
-                  <div class="col-md-6">
-                    <div class="info-main">
-                      <g-link :to="fpost.path" class="h5 title">{{fpost.title}}</g-link>
-                      <!-- <div class="rating-wrap mb-3">
-                        <ul class="rating-stars">
-                          <li style="width:80%" class="stars-active">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                          </li>
-                          <li>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                          </li>
-                        </ul>
-                        <div class="label-rating">7/10</div>
-                      </div>-->
-                      <!-- rating-wrap.// -->
+                <div class="card-body">
+                  <div class="row no-gutters">
+                    <aside class="col-md-3">
+                      <g-link :to="fpost.path" class="img-wrap">
+                        <span class="badge badge-danger">NEW</span>
+                        <img :src="getSrc(fpost.images)" :alt="fpost.title" />
+                      </g-link>
+                    </aside>
+                    <div class="col-md-6">
+                      <div class="info-main">
+                        <g-link :to="fpost.path" class="h5 title">{{fpost.title}}</g-link>
 
-                      <p>
-                        {{fpost.description.substring(0,300)+" " | strippedContent}}
-                        <g-link :to="fpost.path">+ info</g-link>
-                      </p>
-                    </div>
-                    <!-- info-main.// -->
-                  </div>
-                  <aside class="col-sm-3">
-                    <div class="info-aside">
-                      <div class="price-wrap">
-                        <h5 class="price h5">{{fpost.listPrice}}</h5>
-                        <!-- <del class="price-old">{{fpost.price}}</del> -->
+                        <p>
+                          {{fpost.description.substring(0,300)+" " | strippedContent}}
+                          <g-link :to="fpost.path">+ info</g-link>
+                        </p>
                       </div>
-                      <!-- info-price-detail // -->
-                      <p class="text-success">Spedizione gratuita</p>
+                    </div>
+                    <div class="info-aside col-md-3">
+                      <div class="price-wrap text-center">
+                        <span class="price h5">{{ fpost.price }}€</span>
+                        <del class="price-old" v-if="fpost.discount !== '0%'">{{ fpost.listPrice }}€</del>
+                      </div>
 
                       <p>
-                        <a :href="fpost.uRL+affiliate" class="btn btn-success btn-block">Acquista</a>
-                        <a :href="fpost.uRL+affiliate+reviews" class="btn btn-light btn-block">
+                        <a :href="fpost.uRL+affiliate" class="btn btn-success btn-lg btn-block mt-1">Acquista</a></p>
+                        <p>
+                        <a :href="fpost.uRL+affiliate+reviews" class="btn btn-warning btn-lg btn-block mt-1">
                           <i class="fa fa-heart"></i>
                           <span class="text">Recensioni</span>
                         </a>
-                        <!-- <span>{{fpost.uRL}}</span> -->
+                     
                       </p>
                     </div>
-                    <!-- info-aside.// -->
-                  </aside>
+                  </div>
                 </div>
               </div>
             </div>
           </QFeaturedPosts>
           <!-- END NEW PRODUCTS LIST -->
         </div>
-           <div class="div-heading mb-4">
-          <a href="/product-list/" class="btn btn-outline-primary float-right">Tutti i prodotti</a>
-         <p>&nbsp;</p>
-        </div>
+        <div>
+          <a href="/product-list/" class="btn btn-info float-right">Tutti i prodotti</a>
+               </div>
+               <div class="clearfix">&nbsp;</div>
+
       </div>
-     
     </div>
   </Layout>
 </template>
@@ -188,6 +165,19 @@ button:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
 }
+.card-product-list {
+  .info-aside {
+    border-left: 1px solid #e4e4e4;
+    padding: 1.5rem 1rem !important;
+    @media (max-width: 768px) {
+      border-left: none;
+      .price-wrap {text-align: center}
+      .text-success {text-align: center}
+    }
+  }
+}
+
+
 </style>
 
 <page-query>
@@ -198,6 +188,7 @@ query {
         id
         title
         price
+        discount
         listPrice
         path
         uRL       
@@ -226,11 +217,11 @@ export default {
   components: {
     QFeaturedPosts: () => import("../queries/QFeaturedProd.vue")
   },
-   filters: {
-     strippedContent: function(string) {
-       return string.replace(/<\/?[^>]+>/gi, " ");
-     }
-   },
+  filters: {
+    strippedContent: function(string) {
+      return string.replace(/<\/?[^>]+>/gi, " ");
+    }
+  },
   computed: {
     affiliate: function() {
       return "&tag=newdev-21";
