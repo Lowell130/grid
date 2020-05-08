@@ -30,6 +30,19 @@ module.exports = {
           }
         }
       }
+    },
+    {
+      use: 'gridsome-plugin-flexsearch',
+      options: {
+        collections: [
+          {
+            typeName: 'Product',
+            indexName: 'Product',
+            fields: ['title']
+          }
+        ],
+        searchFields: ['title']
+      }
     }
   ],
   templates: {
