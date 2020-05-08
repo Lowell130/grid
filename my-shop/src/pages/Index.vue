@@ -26,10 +26,11 @@
               </div>
 
               <div class="info-wrap">
-                <a href="#" class="btn btn-block btn-success">
-                  <i class="fas fa-shopping-cart"></i>
-                  {{ pro.node.price }}€
-                </a>
+                <span v-if="pro.node.price !== '0,0'" class="btn btn-block btn-success">{{ pro.node.price }}€</span>
+
+                <span v-else class="btn btn-block btn-success">
+                  <a style="color:#fff;text-decoration:none;" :href="pro.node.uRL+affiliate">Offerta</a>
+                </span>
               </div>
             </div>
           </div>
@@ -47,7 +48,7 @@
       </div>
 
       <div class="container">
-        <div class="row">
+     
           <!-- START NEW PRODUCTS LIST -->
           <QFeaturedPosts v-slot="{ posts: featured_posts }">
             <div class="col-md-12" v-for="fpost in featured_posts" :key="fpost.id">
@@ -92,7 +93,7 @@
             </div>
           </QFeaturedPosts>
           <!-- END NEW PRODUCTS LIST -->
-        </div>
+       
         <div>
           <a href="/product-list/" class="btn btn-info float-right">Tutti i prodotti</a>
                </div>

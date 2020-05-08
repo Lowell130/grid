@@ -1,6 +1,6 @@
 // QFeaturedProd.vue
 <template>
-  <div>
+  <div class="row">
     <slot v-bind:posts="posts"></slot>
   </div>
 </template>
